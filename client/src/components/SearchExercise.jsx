@@ -15,13 +15,17 @@ class SearchExercise extends React.Component {
     });
   }
 
+  handleClick(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div>
         <form>
           Enter Your Exercise: 
-          <input type="text" onChange={this.handleChange.bind(this)}/>
-          <input type="submit"/> 
+          <input type="text" value={this.state.query} onChange={this.handleChange.bind(this)}/>
+          <input type="submit" onClick={this.handleClick.bind(this)}/> 
         </form>
       </div>
     );
