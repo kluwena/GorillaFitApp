@@ -17,6 +17,17 @@ class SearchExercise extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
+    axios.get('/exercise', {
+      params: {
+        userExercise: this.state.query
+      }
+    })
+    .then(res => {
+      console.log('fetch successful!', res.data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
   render() {
