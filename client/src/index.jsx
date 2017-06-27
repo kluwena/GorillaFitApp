@@ -8,6 +8,9 @@ import Calories from './components/Calories.jsx';
 import Nutrients from './components/Nutrients.jsx';
 import update from 'immutability-helper';
 
+/*Exercise Components*/
+import Exercises from './components/Exercises.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -93,6 +96,8 @@ class App extends React.Component {
       <Items breakfast={this.state.items.breakfast} lunch={this.state.items.lunch} dinner={this.state.items.dinner} snack={this.state.items.snack} />
       <Calories totalCalories={this.state.totalCalories} />
       <Nutrients fat={this.state.fat} carbs={this.state.carbs} protein={this.state.protein} />
+      <hr/>
+      <Exercises />
     </div >);
   }
 }
