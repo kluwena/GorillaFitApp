@@ -10,6 +10,7 @@ import update from 'immutability-helper';
 
 /*Exercise Components*/
 import Exercises from './components/Exercises.jsx';
+import CalorieOutput from './components/CalorieOutput.jsx';
 
 
 class App extends React.Component {
@@ -46,7 +47,8 @@ class App extends React.Component {
           calories: 70,
           name: 'yoga'
         },
-      ]
+      ],
+      calorieOutput: 0
 
 
     };
@@ -98,6 +100,7 @@ class App extends React.Component {
       <Nutrients fat={this.state.fat} carbs={this.state.carbs} protein={this.state.protein} />
       <hr/>
       <Exercises />
+      <CalorieOutput calorieOutput={this.state.calorieOutput}/>
     </div >);
   }
 }
