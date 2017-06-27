@@ -19,8 +19,8 @@ class SearchExercise extends React.Component {
     return (
       <div>
         <form>
-          Enter Your Exercise:
-          <input type="text"/>
+          Enter Your Exercise: 
+          <input type="text" onChange={this.handleChange.bind(this)}/>
           <input type="submit"/> 
         </form>
       </div>
