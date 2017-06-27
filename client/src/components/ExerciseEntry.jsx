@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ExerciseEntry = (props) => {
+const ExerciseEntry = (props) => (
   <div>
     {props.exercise}
-  </div>;
-};
+  </div>
+);
 
 export default ExerciseEntry;
