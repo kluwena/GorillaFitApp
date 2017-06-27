@@ -28,7 +28,24 @@ class App extends React.Component {
       totalCalories: 0,
       fat: 0,
       carbs: 0,
-      protein: 0
+      protein: 0,
+      /*Below are dummy data for exercises and calorie output*/
+      exercises: [
+        {
+          userInput: 'biceps',
+          duration: 20,
+          calories: 100,
+          name: 'weight-lifting'
+        },
+        {
+          userInput: 'yoga',
+          duration: 30,
+          calories: 70,
+          name: 'yoga'
+        },
+      ]
+
+
     };
     this.addFood = this.addFood.bind(this);
   }

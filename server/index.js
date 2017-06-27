@@ -28,11 +28,10 @@ app.get('/foods', function (req, res) {
   //the below is some code I've added in to verify the client get request works
   //*********************TestCode************************//
   //console.log('this should be the body ', req.url)
-
   //res.send('this is data from the server')
   //res.status(200)
+  // console.log(req.query.userFood);
   //********************TestCode*************************//
-  console.log(req.query.userFood);
 
   var options = {
     method: 'POST',
@@ -61,7 +60,7 @@ app.get('/foods', function (req, res) {
       throw new Error(error);
     } else {
       res.status(200);
-      console.log(body.foods);
+      // console.log(body.foods);
       res.send(body.foods);
       res.end();
 
