@@ -5,7 +5,8 @@ class SearchExercise extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: 'ran 3 miles'
+      query: 'ran 3 miles',
+      response: []
     };
   }
 
@@ -24,6 +25,9 @@ class SearchExercise extends React.Component {
     })
     .then(res => {
       console.log('fetch successful!', res.data);
+      this.setState({
+        response: res.data
+      });
     })
     .catch(err => {
       console.log(err);
