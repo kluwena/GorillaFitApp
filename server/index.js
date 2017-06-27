@@ -69,6 +69,11 @@ app.get('/foods', function (req, res) {
   });
 });
 
+/*get request for exercise*/
+app.get('/exercise', function(req, res) {
+  res.send('hello');
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
