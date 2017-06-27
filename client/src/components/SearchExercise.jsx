@@ -19,7 +19,7 @@ class SearchExercise extends React.Component {
     event.preventDefault();
     axios.get('/exercise', {
       params: {
-        userExercise: this.state.query
+        userExercise: 'ran 3 miles'
       }
     })
     .then(res => {
