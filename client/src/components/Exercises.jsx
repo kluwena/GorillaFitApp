@@ -4,8 +4,8 @@ import ExerciseEntry from './ExerciseEntry.jsx';
 const Exercises = (props) => (
   <div>
     <h4>Exercises You've Done Today: </h4>
-    {props.exercises.map(exercise => {
-      return <ExerciseEntry exercise={exercise} />;
+    {props.exercises.map((exercise, index) => {
+      return <ExerciseEntry key={index} exercise={exercise} />;
     })}
   </div>
 );
