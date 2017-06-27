@@ -5,7 +5,7 @@ class SearchExercise extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ''
+      query: 'ran 3 miles'
     };
   }
 
@@ -19,7 +19,7 @@ class SearchExercise extends React.Component {
     event.preventDefault();
     axios.get('/exercise', {
       params: {
-        userExercise: 'ran 3 miles'
+        userExercise: this.state.query
       }
     })
     .then(res => {
