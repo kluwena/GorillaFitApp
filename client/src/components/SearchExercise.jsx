@@ -6,7 +6,6 @@ class SearchExercise extends React.Component {
     super(props);
     this.state = {
       query: 'ran 3 miles',
-      response: []
     };
   }
 
@@ -18,6 +17,8 @@ class SearchExercise extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
+
+    var context = this;
     axios.get('/exercise', {
       params: {
         userExercise: this.state.query
@@ -25,9 +26,7 @@ class SearchExercise extends React.Component {
     })
     .then(res => {
       console.log('fetch successful!', res.data);
-      this.setState({
-        response: res.data
-      });
+      context.props.addExercise(res.data);
     })
     .catch(err => {
       console.log(err);

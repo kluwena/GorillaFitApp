@@ -36,20 +36,10 @@ class App extends React.Component {
       protein: 0,
       /*Below are dummy data for exercises and calorie output*/
       exercises: [
-        {
-          userInput: 'biceps',
-          duration: 20,
-          calories: 100,
-          name: 'weight-lifting'
-        },
-        {
-          userInput: 'yoga',
-          duration: 30,
-          calories: 70,
-          name: 'yoga'
-        },
+        'rowing',
+        'fencing'
       ],
-      calorieOutput: 0
+      calorieOutput: 560
 
 
     };
@@ -77,6 +67,17 @@ class App extends React.Component {
     console.log(this.state.items);
   }
 
+  /* handlefunction for adding exercise */
+  addExercise(result) {
+    var tempArray = this.state.exercises.slice();
+    tempArray.push(result.exercises[0].name);
+
+    this.setState({
+      exercises: tempArray,
+      calorieOutput: this.state.calorieOutput + result.exercises[0].nf_calories
+    });
+  }
+
   // componentDidMount() {
   //   $.ajax({
   //     url: '/items',
@@ -100,8 +101,8 @@ class App extends React.Component {
       <Calories totalCalories={this.state.totalCalories} />
       <Nutrients fat={this.state.fat} carbs={this.state.carbs} protein={this.state.protein} />
       <hr/>
-      <SearchExercise />
-      <Exercises />
+      <SearchExercise addExercise={this.addExercise.bind(this)}/>
+      <Exercises exercises={this.state.exercises}/>
       <CalorieOutput calorieOutput={this.state.calorieOutput}/>
     </div >);
   }
